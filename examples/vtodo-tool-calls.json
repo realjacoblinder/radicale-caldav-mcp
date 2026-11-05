@@ -1,0 +1,30 @@
+{
+  "create_timed_task": {
+    "calendar_id": "c_REPLACE",
+    "summary": "Submit school form",
+    "due": "2026-09-18T17:00:00-04:00",
+    "description": "Casey's enrollment form",
+    "categories": ["Family", "School"],
+    "priority": 1
+  },
+  "list_tasks_due_this_week": {
+    "calendar_id": "c_REPLACE",
+    "state": "open",
+    "start": "2026-09-15T00:00:00-04:00",
+    "end": "2026-09-22T00:00:00-04:00",
+    "include_undated": false
+  },
+  "update_progress": {
+    "calendar_id": "c_REPLACE",
+    "task_id": "t_REPLACE",
+    "etag": "\"REPLACE_WITH_FRESH_ETAG\"",
+    "status": "IN-PROCESS",
+    "percent_complete": 50
+  },
+  "complete_task": {
+    "calendar_id": "c_REPLACE",
+    "task_id": "t_REPLACE",
+    "etag": "\"REPLACE_WITH_FRESH_ETAG\"",
+    "completed_at": "2026-09-18T20:30:00Z"
+  }
+}

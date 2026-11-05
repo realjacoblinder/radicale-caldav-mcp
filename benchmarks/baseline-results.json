@@ -1,0 +1,667 @@
+{
+  "fixture": {
+    "calendars": 2,
+    "endpoint": "isolated loopback Radicale; no real endpoint queried",
+    "event_resources_per_calendar": 24,
+    "long_query_end": "2026-09-25T00:00:00-04:00",
+    "long_query_start": "2026-09-01T00:00:00-04:00",
+    "short_query_end": "2026-09-12T00:00:00-04:00",
+    "short_query_start": "2026-09-10T00:00:00-04:00",
+    "task_resources_per_calendar": 24
+  },
+  "generated_at": "2026-09-23T15:51:22.334393+00:00",
+  "measurement": {
+    "http_ms": "sum of instrumented DAV request wall times",
+    "local_service_ms": "operation wall time minus instrumented DAV request time",
+    "response_bytes": "decoded HTTP response body bytes; bodies are not retained",
+    "response_resources": "DAV multistatus response elements; successful GET counts as one"
+  },
+  "sampling": {
+    "samples": 30,
+    "warmup": 2
+  },
+  "schema_version": 1,
+  "versions": {
+    "caldav": "3.3.0",
+    "python": "3.11.16",
+    "radicale": "3.8.0"
+  },
+  "workloads": {
+    "get_free_busy.long.all": {
+      "http_ms": {
+        "median": 29.4,
+        "p95": 30.603
+      },
+      "local_service_ms": {
+        "median": 31.013,
+        "p95": 31.998
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 5.03,
+          "p95": 5.536
+        },
+        "resource_transfer": {
+          "median": 24.45,
+          "p95": 25.282
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 21741.0,
+        "p95": 21741.0
+      },
+      "response_resources_per_sample": {
+        "median": 52.0,
+        "p95": 52.0
+      },
+      "result_items": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "wall_ms": {
+        "median": 60.394,
+        "p95": 62.083
+      }
+    },
+    "get_free_busy.long.one": {
+      "http_ms": {
+        "median": 17.438,
+        "p95": 18.066
+      },
+      "local_service_ms": {
+        "median": 16.251,
+        "p95": 21.753
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.871,
+          "p95": 5.346
+        },
+        "resource_transfer": {
+          "median": 12.406,
+          "p95": 13.098
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 11614.0,
+        "p95": 11614.0
+      },
+      "response_resources_per_sample": {
+        "median": 28.0,
+        "p95": 28.0
+      },
+      "result_items": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "wall_ms": {
+        "median": 33.788,
+        "p95": 39.804
+      }
+    },
+    "get_free_busy.short.all": {
+      "http_ms": {
+        "median": 19.51,
+        "p95": 20.83
+      },
+      "local_service_ms": {
+        "median": 9.931,
+        "p95": 11.004
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.906,
+          "p95": 5.458
+        },
+        "resource_transfer": {
+          "median": 14.618,
+          "p95": 15.335
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 6739.0,
+        "p95": 6739.0
+      },
+      "response_resources_per_sample": {
+        "median": 16.0,
+        "p95": 16.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 29.363,
+        "p95": 31.136
+      }
+    },
+    "get_free_busy.short.one": {
+      "http_ms": {
+        "median": 11.998,
+        "p95": 12.958
+      },
+      "local_service_ms": {
+        "median": 5.348,
+        "p95": 6.38
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.737,
+          "p95": 5.0
+        },
+        "resource_transfer": {
+          "median": 7.333,
+          "p95": 7.908
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 4113.0,
+        "p95": 4113.0
+      },
+      "response_resources_per_sample": {
+        "median": 10.0,
+        "p95": 10.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 17.284,
+        "p95": 19.431
+      }
+    },
+    "get_task.one": {
+      "http_ms": {
+        "median": 5.697,
+        "p95": 6.205
+      },
+      "local_service_ms": {
+        "median": 1.37,
+        "p95": 1.541
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.006,
+          "p95": 4.399
+        },
+        "resource_transfer": {
+          "median": 1.688,
+          "p95": 1.83
+        }
+      },
+      "requests_per_sample": {
+        "GET": {
+          "median": 1.0,
+          "p95": 1.0
+        },
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 1762.0,
+        "p95": 1762.0
+      },
+      "response_resources_per_sample": {
+        "median": 5.0,
+        "p95": 5.0
+      },
+      "result_items": {
+        "median": 1.0,
+        "p95": 1.0
+      },
+      "wall_ms": {
+        "median": 7.059,
+        "p95": 7.647
+      }
+    },
+    "list_calendars": {
+      "http_ms": {
+        "median": 4.002,
+        "p95": 4.341
+      },
+      "local_service_ms": {
+        "median": 0.769,
+        "p95": 0.874
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.002,
+          "p95": 4.341
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 1487.0,
+        "p95": 1487.0
+      },
+      "response_resources_per_sample": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 4.761,
+        "p95": 5.165
+      }
+    },
+    "list_events.long.all": {
+      "http_ms": {
+        "median": 29.166,
+        "p95": 30.573
+      },
+      "local_service_ms": {
+        "median": 32.204,
+        "p95": 33.02
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.823,
+          "p95": 5.522
+        },
+        "resource_transfer": {
+          "median": 24.38,
+          "p95": 24.926
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 21741.0,
+        "p95": 21741.0
+      },
+      "response_resources_per_sample": {
+        "median": 52.0,
+        "p95": 52.0
+      },
+      "result_items": {
+        "median": 60.0,
+        "p95": 60.0
+      },
+      "wall_ms": {
+        "median": 61.532,
+        "p95": 65.944
+      }
+    },
+    "list_events.long.one": {
+      "http_ms": {
+        "median": 16.976,
+        "p95": 17.432
+      },
+      "local_service_ms": {
+        "median": 16.717,
+        "p95": 18.504
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.791,
+          "p95": 5.291
+        },
+        "resource_transfer": {
+          "median": 12.089,
+          "p95": 12.557
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 11614.0,
+        "p95": 11614.0
+      },
+      "response_resources_per_sample": {
+        "median": 28.0,
+        "p95": 28.0
+      },
+      "result_items": {
+        "median": 30.0,
+        "p95": 30.0
+      },
+      "wall_ms": {
+        "median": 33.757,
+        "p95": 35.451
+      }
+    },
+    "list_events.short.all": {
+      "http_ms": {
+        "median": 18.492,
+        "p95": 19.162
+      },
+      "local_service_ms": {
+        "median": 9.549,
+        "p95": 9.907
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.514,
+          "p95": 4.771
+        },
+        "resource_transfer": {
+          "median": 13.98,
+          "p95": 14.571
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 6739.0,
+        "p95": 6739.0
+      },
+      "response_resources_per_sample": {
+        "median": 16.0,
+        "p95": 16.0
+      },
+      "result_items": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "wall_ms": {
+        "median": 27.945,
+        "p95": 28.846
+      }
+    },
+    "list_events.short.one": {
+      "http_ms": {
+        "median": 11.516,
+        "p95": 11.99
+      },
+      "local_service_ms": {
+        "median": 5.391,
+        "p95": 5.679
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.499,
+          "p95": 4.68
+        },
+        "resource_transfer": {
+          "median": 6.976,
+          "p95": 7.359
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 4113.0,
+        "p95": 4113.0
+      },
+      "response_resources_per_sample": {
+        "median": 10.0,
+        "p95": 10.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 16.836,
+        "p95": 17.456
+      }
+    },
+    "list_tasks.all": {
+      "http_ms": {
+        "median": 30.774,
+        "p95": 31.614
+      },
+      "local_service_ms": {
+        "median": 23.698,
+        "p95": 24.217
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.853,
+          "p95": 5.15
+        },
+        "resource_transfer": {
+          "median": 25.881,
+          "p95": 26.446
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 23757.0,
+        "p95": 23757.0
+      },
+      "response_resources_per_sample": {
+        "median": 52.0,
+        "p95": 52.0
+      },
+      "result_items": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "wall_ms": {
+        "median": 54.535,
+        "p95": 55.449
+      }
+    },
+    "list_tasks.one": {
+      "http_ms": {
+        "median": 17.453,
+        "p95": 18.423
+      },
+      "local_service_ms": {
+        "median": 12.468,
+        "p95": 12.69
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.655,
+          "p95": 5.017
+        },
+        "resource_transfer": {
+          "median": 12.837,
+          "p95": 13.375
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 12622.0,
+        "p95": 12622.0
+      },
+      "response_resources_per_sample": {
+        "median": 28.0,
+        "p95": 28.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 29.926,
+        "p95": 30.985
+      }
+    },
+    "search_tasks.all": {
+      "http_ms": {
+        "median": 30.736,
+        "p95": 32.525
+      },
+      "local_service_ms": {
+        "median": 23.552,
+        "p95": 24.188
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.87,
+          "p95": 5.305
+        },
+        "resource_transfer": {
+          "median": 25.827,
+          "p95": 27.398
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 23757.0,
+        "p95": 23757.0
+      },
+      "response_resources_per_sample": {
+        "median": 52.0,
+        "p95": 52.0
+      },
+      "result_items": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "wall_ms": {
+        "median": 54.475,
+        "p95": 56.226
+      }
+    },
+    "search_tasks.one": {
+      "http_ms": {
+        "median": 17.535,
+        "p95": 18.113
+      },
+      "local_service_ms": {
+        "median": 12.217,
+        "p95": 12.476
+      },
+      "network_category_ms": {
+        "discovery": {
+          "median": 4.745,
+          "p95": 4.989
+        },
+        "resource_transfer": {
+          "median": 12.778,
+          "p95": 13.23
+        }
+      },
+      "requests_per_sample": {
+        "PROPFIND": {
+          "median": 2.0,
+          "p95": 2.0
+        },
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 12622.0,
+        "p95": 12622.0
+      },
+      "response_resources_per_sample": {
+        "median": 28.0,
+        "p95": 28.0
+      },
+      "result_items": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "wall_ms": {
+        "median": 29.853,
+        "p95": 30.415
+      }
+    }
+  }
+}

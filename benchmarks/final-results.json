@@ -1,0 +1,553 @@
+{
+  "fixture": {
+    "calendars": 2,
+    "endpoint": "isolated loopback Radicale; no real endpoint queried",
+    "event_resources_per_calendar": 24,
+    "long_query_end": "2026-09-25T00:00:00-04:00",
+    "long_query_start": "2026-09-01T00:00:00-04:00",
+    "short_query_end": "2026-09-12T00:00:00-04:00",
+    "short_query_start": "2026-09-10T00:00:00-04:00",
+    "task_resources_per_calendar": 24
+  },
+  "generated_at": "2026-09-23T16:47:47.131447+00:00",
+  "measurement": {
+    "http_ms": "sum of instrumented DAV request wall times",
+    "local_service_ms": "operation wall time minus instrumented DAV request time",
+    "response_bytes": "decoded HTTP response body bytes; bodies are not retained",
+    "response_resources": "DAV multistatus response elements; successful GET counts as one"
+  },
+  "sampling": {
+    "samples": 30,
+    "warmup": 2
+  },
+  "schema_version": 1,
+  "versions": {
+    "caldav": "3.3.0",
+    "python": "3.11.16",
+    "radicale": "3.8.0"
+  },
+  "workloads": {
+    "get_free_busy.long.all": {
+      "http_ms": {
+        "median": 24.715,
+        "p95": 24.908
+      },
+      "local_service_ms": {
+        "median": 29.443,
+        "p95": 29.929
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 24.715,
+          "p95": 24.908
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 20254.0,
+        "p95": 20254.0
+      },
+      "response_resources_per_sample": {
+        "median": 48.0,
+        "p95": 48.0
+      },
+      "result_items": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "wall_ms": {
+        "median": 54.206,
+        "p95": 54.715
+      }
+    },
+    "get_free_busy.long.one": {
+      "http_ms": {
+        "median": 12.263,
+        "p95": 12.577
+      },
+      "local_service_ms": {
+        "median": 14.829,
+        "p95": 15.148
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 12.263,
+          "p95": 12.577
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 10127.0,
+        "p95": 10127.0
+      },
+      "response_resources_per_sample": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "result_items": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "wall_ms": {
+        "median": 27.131,
+        "p95": 27.491
+      }
+    },
+    "get_free_busy.short.all": {
+      "http_ms": {
+        "median": 13.296,
+        "p95": 13.527
+      },
+      "local_service_ms": {
+        "median": 7.156,
+        "p95": 7.484
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 13.296,
+          "p95": 13.527
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 3598.0,
+        "p95": 3598.0
+      },
+      "response_resources_per_sample": {
+        "median": 8.0,
+        "p95": 8.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 20.382,
+        "p95": 20.927
+      }
+    },
+    "get_free_busy.short.one": {
+      "http_ms": {
+        "median": 6.622,
+        "p95": 6.942
+      },
+      "local_service_ms": {
+        "median": 3.736,
+        "p95": 3.998
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 6.622,
+          "p95": 6.942
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 1799.0,
+        "p95": 1799.0
+      },
+      "response_resources_per_sample": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 10.388,
+        "p95": 10.664
+      }
+    },
+    "get_task.one": {
+      "http_ms": {
+        "median": 1.608,
+        "p95": 1.756
+      },
+      "local_service_ms": {
+        "median": 0.601,
+        "p95": 0.656
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 1.608,
+          "p95": 1.756
+        }
+      },
+      "requests_per_sample": {
+        "GET": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 275.0,
+        "p95": 275.0
+      },
+      "response_resources_per_sample": {
+        "median": 1.0,
+        "p95": 1.0
+      },
+      "result_items": {
+        "median": 1.0,
+        "p95": 1.0
+      },
+      "wall_ms": {
+        "median": 2.211,
+        "p95": 2.389
+      }
+    },
+    "list_calendars": {
+      "http_ms": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "local_service_ms": {
+        "median": 0.009,
+        "p95": 0.012
+      },
+      "network_category_ms": {},
+      "requests_per_sample": {},
+      "response_bytes_per_sample": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "response_resources_per_sample": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 0.009,
+        "p95": 0.012
+      }
+    },
+    "list_events.long.all": {
+      "http_ms": {
+        "median": 24.348,
+        "p95": 24.621
+      },
+      "local_service_ms": {
+        "median": 31.178,
+        "p95": 31.42
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 24.348,
+          "p95": 24.621
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 20254.0,
+        "p95": 20254.0
+      },
+      "response_resources_per_sample": {
+        "median": 48.0,
+        "p95": 48.0
+      },
+      "result_items": {
+        "median": 60.0,
+        "p95": 60.0
+      },
+      "wall_ms": {
+        "median": 55.502,
+        "p95": 55.887
+      }
+    },
+    "list_events.long.one": {
+      "http_ms": {
+        "median": 12.158,
+        "p95": 12.443
+      },
+      "local_service_ms": {
+        "median": 15.849,
+        "p95": 16.072
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 12.158,
+          "p95": 12.443
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 10127.0,
+        "p95": 10127.0
+      },
+      "response_resources_per_sample": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "result_items": {
+        "median": 30.0,
+        "p95": 30.0
+      },
+      "wall_ms": {
+        "median": 28.014,
+        "p95": 28.299
+      }
+    },
+    "list_events.short.all": {
+      "http_ms": {
+        "median": 13.454,
+        "p95": 13.916
+      },
+      "local_service_ms": {
+        "median": 7.365,
+        "p95": 7.83
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 13.454,
+          "p95": 13.916
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 3598.0,
+        "p95": 3598.0
+      },
+      "response_resources_per_sample": {
+        "median": 8.0,
+        "p95": 8.0
+      },
+      "result_items": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "wall_ms": {
+        "median": 20.728,
+        "p95": 21.757
+      }
+    },
+    "list_events.short.one": {
+      "http_ms": {
+        "median": 6.806,
+        "p95": 6.944
+      },
+      "local_service_ms": {
+        "median": 3.757,
+        "p95": 4.046
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 6.806,
+          "p95": 6.944
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 1799.0,
+        "p95": 1799.0
+      },
+      "response_resources_per_sample": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 10.487,
+        "p95": 10.937
+      }
+    },
+    "list_tasks.all": {
+      "http_ms": {
+        "median": 25.837,
+        "p95": 26.342
+      },
+      "local_service_ms": {
+        "median": 22.764,
+        "p95": 23.114
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 25.837,
+          "p95": 26.342
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 22270.0,
+        "p95": 22270.0
+      },
+      "response_resources_per_sample": {
+        "median": 48.0,
+        "p95": 48.0
+      },
+      "result_items": {
+        "median": 4.0,
+        "p95": 4.0
+      },
+      "wall_ms": {
+        "median": 48.723,
+        "p95": 49.212
+      }
+    },
+    "list_tasks.one": {
+      "http_ms": {
+        "median": 12.805,
+        "p95": 13.141
+      },
+      "local_service_ms": {
+        "median": 11.53,
+        "p95": 12.011
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 12.805,
+          "p95": 13.141
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 11135.0,
+        "p95": 11135.0
+      },
+      "response_resources_per_sample": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "result_items": {
+        "median": 2.0,
+        "p95": 2.0
+      },
+      "wall_ms": {
+        "median": 24.428,
+        "p95": 24.811
+      }
+    },
+    "search_tasks.all": {
+      "http_ms": {
+        "median": 26.189,
+        "p95": 26.446
+      },
+      "local_service_ms": {
+        "median": 22.554,
+        "p95": 22.81
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 26.189,
+          "p95": 26.446
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 2.0,
+          "p95": 2.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 22270.0,
+        "p95": 22270.0
+      },
+      "response_resources_per_sample": {
+        "median": 48.0,
+        "p95": 48.0
+      },
+      "result_items": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "wall_ms": {
+        "median": 48.696,
+        "p95": 49.146
+      }
+    },
+    "search_tasks.one": {
+      "http_ms": {
+        "median": 12.793,
+        "p95": 13.208
+      },
+      "local_service_ms": {
+        "median": 11.398,
+        "p95": 11.682
+      },
+      "network_category_ms": {
+        "resource_transfer": {
+          "median": 12.793,
+          "p95": 13.208
+        }
+      },
+      "requests_per_sample": {
+        "REPORT": {
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "response_bytes_per_sample": {
+        "median": 11135.0,
+        "p95": 11135.0
+      },
+      "response_resources_per_sample": {
+        "median": 24.0,
+        "p95": 24.0
+      },
+      "result_items": {
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "wall_ms": {
+        "median": 24.205,
+        "p95": 24.682
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# Merge mcp_servers into the active profile's existing config.yaml.
+# Replace /home/user with the actual absolute installation path.
+mcp_servers:
+  personal_calendar:
+    command: "/home/user/.local/bin/radicale-mcp"
+    timeout: 120
+    connect_timeout: 30
+    env:
+      CALDAV_URL: "http://127.0.0.1:5232"
+      CALDAV_USERNAME: "${PERSONAL_CALDAV_USERNAME}"
+      CALDAV_PASSWORD: "${PERSONAL_CALDAV_PASSWORD}"
+      CALDAV_DEFAULT_TIMEZONE: "America/New_York"
+      CALDAV_VERIFY_SSL: "true"
+      CALDAV_TIMEOUT: "30"
+      LOG_LEVEL: "WARNING"
+  family_calendar:
+    command: "/home/user/.local/bin/radicale-mcp"
+    timeout: 120
+    connect_timeout: 30
+    env:
+      CALDAV_URL: "http://127.0.0.1:5232"
+      CALDAV_USERNAME: "${FAMILY_CALDAV_USERNAME}"
+      CALDAV_PASSWORD: "${FAMILY_CALDAV_PASSWORD}"
+      CALDAV_DEFAULT_TIMEZONE: "America/New_York"
+      CALDAV_VERIFY_SSL: "true"
+      CALDAV_TIMEOUT: "30"
+      LOG_LEVEL: "WARNING"

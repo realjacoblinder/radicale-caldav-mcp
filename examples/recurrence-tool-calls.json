@@ -1,0 +1,94 @@
+[
+  {
+    "tool": "get_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "occurrence_id": "2026-09-15T14:00:00-04:00"
+    }
+  },
+  {
+    "tool": "update_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"ETAG_FROM_GET_EVENT\"",
+      "scope": "occurrence",
+      "occurrence_id": "2026-09-15T14:00:00-04:00",
+      "start": "2026-09-15T15:00:00-04:00"
+    }
+  },
+  {
+    "tool": "delete_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"FRESH_ETAG_FROM_GET_EVENT\"",
+      "scope": "occurrence",
+      "occurrence_id": "2026-09-15T14:00:00-04:00"
+    }
+  },
+  {
+    "tool": "update_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"FRESH_ETAG_FROM_GET_EVENT\"",
+      "scope": "series",
+      "summary": "Weekly family appointment"
+    }
+  },
+  {
+    "tool": "delete_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"FRESH_ETAG_FROM_GET_EVENT\"",
+      "scope": "series"
+    }
+  },
+  {
+    "tool": "create_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "summary": "Weekly family dinner",
+      "start": "2026-09-18T18:00:00-04:00",
+      "duration_minutes": 90,
+      "timezone": "America/New_York",
+      "recurrence_rule": "FREQ=WEEKLY;BYDAY=FR;COUNT=12"
+    }
+  },
+  {
+    "tool": "update_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"ETAG_FROM_GET_EVENT\"",
+      "scope": "future",
+      "occurrence_id": "2026-10-02T18:00:00-04:00",
+      "start": "2026-10-02T19:00:00-04:00"
+    }
+  },
+  {
+    "tool": "update_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"ETAG_FROM_GET_EVENT\"",
+      "scope": "future",
+      "occurrence_id": "2026-10-02T18:00:00-04:00",
+      "start": "2026-10-03T19:00:00-04:00",
+      "recurrence_rule": "FREQ=WEEKLY;BYDAY=SA;COUNT=8"
+    }
+  },
+  {
+    "tool": "delete_event",
+    "arguments": {
+      "calendar_id": "c_DISCOVERED",
+      "event_id": "e_DISCOVERED",
+      "etag": "\"ETAG_FROM_GET_EVENT\"",
+      "scope": "future",
+      "occurrence_id": "2026-10-02T18:00:00-04:00"
+    }
+  }
+]
