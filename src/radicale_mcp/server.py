@@ -190,12 +190,15 @@ def build_server(config: Config, service: CalendarService | None = None) -> MCPS
     ) -> dict[str, Any]:
         """CREATE a single or recurring event in the chosen calendar. Timed events require ISO-8601
         start and end OR duration_minutes (elapsed minutes). timezone is an optional IANA zone.
-        All-day events use YYYY-MM-DD dates, exclusive end, default one day. No invitations are
-        sent. Optional recurrence_rule is an RRULE value, e.g. FREQ=WEEKLY;BYDAY=TU;COUNT=10.
+        All-day events use YYYY-MM-DD dates, exclusive end, default one day. This tool does not
+        send invitations itself; Radicale may send them through a configured email hook.
+        Optional recurrence_rule is an RRULE value, e.g. FREQ=WEEKLY;BYDAY=TU;COUNT=10.
         The start must match the rule; omitted COUNT/UNTIL repeats indefinitely. Specify an IANA
         timezone (or configure its default) to preserve local appointment time across DST. alarms
         is an optional list of DISPLAY reminders: {trigger: '-PT15M', description: 'Reminder',
         action: 'DISPLAY', related: 'START'}. Omit it for no reminders.
+        Omitted/null organizer uses CALDAV_DEFAULT_ORGANIZER when configured; an explicit
+        organizer overrides it. Organizer/attendee metadata alone does not configure delivery.
         Creation is not idempotent: after an uncertain network result, search before retrying.
         """
         return await invoke(

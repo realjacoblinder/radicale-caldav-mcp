@@ -72,6 +72,31 @@ Text is limited to 16,000 characters per value and 100 values per repeated
 property; URIs are limited to 2,048 characters. ATTACH accepts absolute URIs and
 does not fetch them. Binary attachments are not supported.
 
+### Default organizer and invitations
+
+`create_event` writes `ORGANIZER` only when an organizer is supplied or
+`CALDAV_DEFAULT_ORGANIZER` is configured in the MCP process environment:
+
+```dotenv
+CALDAV_DEFAULT_ORGANIZER=mailto:you@example.com
+```
+
+Restart the MCP process after changing its environment. An explicit
+`organizer={"address": "mailto:other@example.com", "cn": "Other person"}`
+overrides the default. Omitted/null organizer uses the default on creation only;
+updates preserve existing organizer metadata and do not backfill older events.
+
+**This MCP server does not itself send invitations.** It stores calendar
+resources, but Radicale can send email invitations when its email hook and
+SMTP are configured. Versions supporting `itip_enabled` also require organizer
+ownership authorization, such as `itip_owner_map = alice=you@example.com`.
+The event's organizer must match the authenticated user's authorized address.
+Use `mailto:you@example.com` for this MCP default, but a bare email address in
+Radicale's `itip_owner_map`. See the
+[Radicale v3 email-hook documentation](https://radicale.org/v3.html#itip_enabled)
+for supported versions, requirements, and limitations. Setting organizer and
+attendee metadata alone does not configure server-side delivery.
+
 ## Configuration
 
 The executable reads process environment variables at startup. It does not
@@ -85,6 +110,7 @@ auto-load a `.env` file or read secrets from tool arguments.
 | `CALDAV_VERIFY_SSL` | `true` | TLS certificate verification; literal `true`/`false` |
 | `CALDAV_TIMEOUT` | `30` | Per-HTTP-request timeout in seconds, 1–120 |
 | `CALDAV_DEFAULT_TIMEZONE` | `UTC` | IANA timezone for naive input, floating events and all-day busy time |
+| `CALDAV_DEFAULT_ORGANIZER` | unset | Default organizer for new events, e.g. `mailto:you@example.com` |
 | `CALDAV_MAX_RANGE_DAYS` | `93` | Maximum query span; administrator may set 1–366 |
 | `CALDAV_MAX_EVENTS` | `5000` | Resource/occurrence safety cap per query; 1–10000 |
 | `LOG_LEVEL` | `WARNING` | `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` |

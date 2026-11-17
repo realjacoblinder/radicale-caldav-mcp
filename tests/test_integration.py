@@ -88,6 +88,39 @@ def test_crud_search_range_and_preservation(accounts):
         fresh(service, cid, event)
 
 
+@pytest.mark.parametrize("recurring", [False, True])
+def test_default_organizer_create_and_update(accounts, recurring):
+    original, cid, _ = accounts["alice"]
+    legacy = create(original, cid)
+    assert legacy["organizer"] is None
+    svc = CalendarService(
+        replace(original.config, default_organizer="mailto:owner@example.test"), original.store
+    )
+    options = {"recurrence_rule": "FREQ=DAILY;COUNT=2"} if recurring else {}
+    event = create(svc, cid, **options)
+    assert event["organizer"] == {"address": "mailto:owner@example.test"}
+    assert fresh(svc, cid, event)["organizer"] == event["organizer"]
+    raw, _ = svc.store.get(cid, event["event_id"])
+    assert "ORGANIZER:mailto:owner@example.test" in raw
+
+    explicit = {"address": "mailto:other@example.test", "cn": "Other"}
+    overridden = create(svc, cid, organizer=explicit, **options)
+    assert fresh(svc, cid, overridden)["organizer"] == explicit
+    changed = svc.update_event(
+        cid,
+        overridden["event_id"],
+        overridden["etag"],
+        summary="Updated",
+        scope="series" if recurring else "event",
+    )["event"]
+    assert changed["organizer"] == explicit
+    legacy = fresh(svc, cid, legacy)
+    updated = svc.update_event(cid, legacy["event_id"], legacy["etag"], summary="No backfill")[
+        "event"
+    ]
+    assert updated["organizer"] is None
+
+
 def test_structured_alarms_create_update_and_validation(accounts):
     service, cid, _ = accounts["alice"]
     alarm = {"trigger": "-PT15M", "description": "Soon", "action": "DISPLAY"}

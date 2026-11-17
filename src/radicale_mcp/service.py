@@ -424,6 +424,8 @@ class CalendarService:
     ) -> dict[str, Any]:
         validate_text(summary, description, location)
         alarm_components = validate_alarms(alarms)
+        if organizer is None and self.config.default_organizer is not None:
+            organizer = {"address": self.config.default_organizer}
         tz = zone(timezone) if timezone else self.tz
         a, b = event_times(start, end, duration_minutes, all_day, tz)
         if not all_day:

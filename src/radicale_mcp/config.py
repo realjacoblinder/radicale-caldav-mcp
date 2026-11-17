@@ -1,6 +1,7 @@
 """Administrator-owned process configuration; never accepted by a tool."""
 
 import os
+import re
 from collections.abc import Mapping
 from dataclasses import dataclass, field
 from urllib.parse import urlsplit
@@ -20,6 +21,7 @@ class Config:
     max_range_days: int = 93
     max_events: int = 5000
     log_level: str = "WARNING"
+    default_organizer: str | None = None
 
     @classmethod
     def from_env(cls, env: Mapping[str, str] | None = None) -> "Config":
@@ -71,6 +73,20 @@ class Config:
             raise CalendarError(
                 "configuration", "CALDAV_DEFAULT_TIMEZONE must be an IANA timezone."
             ) from None
+        organizer = env.get("CALDAV_DEFAULT_ORGANIZER", "") or None
+        if organizer is not None and (
+            len(organizer) > 2048
+            or not re.fullmatch(
+                r"mailto:[^@\s<>?\x00-\x1f\x7f]+@[^@\s<>?\x00-\x1f\x7f]+", organizer
+            )
+            or "${" in organizer
+            or re.search(r"%(?![0-9A-Fa-f]{2})", organizer)
+        ):
+            raise CalendarError(
+                "configuration",
+                "CALDAV_DEFAULT_ORGANIZER must be a mailto: email address "
+                "(maximum 2048 characters).",
+            )
         level = env.get("LOG_LEVEL", "WARNING").upper()
         if level not in ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"):
             raise CalendarError(
@@ -86,4 +102,5 @@ class Config:
             integer("CALDAV_MAX_RANGE_DAYS", 93, 1, 366),
             integer("CALDAV_MAX_EVENTS", 5000, 1, 10000),
             level,
+            organizer,
         )

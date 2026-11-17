@@ -31,6 +31,7 @@ def ics(*events):
 
 def test_config(config):
     assert config.timeout == 30 and config.verify_ssl
+    assert config.default_organizer is None
     assert config.password not in repr(config)
     assert (
         Config.from_env(
@@ -57,6 +58,12 @@ def test_config(config):
         ("CALDAV_TIMEOUT", "0"),
         ("CALDAV_VERIFY_SSL", "maybe"),
         ("CALDAV_DEFAULT_TIMEZONE", "Not/AZone"),
+        ("CALDAV_DEFAULT_ORGANIZER", "alice@example.test"),
+        ("CALDAV_DEFAULT_ORGANIZER", "mailto:"),
+        ("CALDAV_DEFAULT_ORGANIZER", "mailto:alice@example.test\r\nX: bad"),
+        ("CALDAV_DEFAULT_ORGANIZER", "${MISSING}"),
+        ("CALDAV_DEFAULT_ORGANIZER", "mailto:alice@example.test?subject=Hi"),
+        ("CALDAV_DEFAULT_ORGANIZER", "mailto:a%ZZ@example.test"),
         ("CALDAV_MAX_EVENTS", "0"),
         ("LOG_LEVEL", "trace"),
     ],
@@ -70,6 +77,21 @@ def test_bad_config(key, value):
     env[key] = value
     with pytest.raises(CalendarError):
         Config.from_env(env)
+
+
+@pytest.mark.parametrize(
+    "value, expected", [("", None), ("mailto:a@example.test", "mailto:a@example.test")]
+)
+def test_default_organizer_config(value, expected):
+    config = Config.from_env(
+        {
+            "CALDAV_URL": "http://localhost:5232",
+            "CALDAV_USERNAME": "alice",
+            "CALDAV_PASSWORD": "x",
+            "CALDAV_DEFAULT_ORGANIZER": value,
+        }
+    )
+    assert config.default_organizer == expected
 
 
 def test_missing_config():
