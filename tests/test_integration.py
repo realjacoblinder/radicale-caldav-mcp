@@ -4,6 +4,7 @@ import os
 import subprocess
 import sys
 from dataclasses import replace
+from pathlib import Path
 from uuid import uuid4
 
 import pytest
@@ -607,8 +608,8 @@ def test_check_cli_and_missing_config(accounts, project_root):
 
 def test_installed_entrypoint_and_smoke_script(accounts, project_root):
     service, cid, _ = accounts["alice"]
-    executable = project_root / ".venv" / "bin" / "radicale-mcp"
-    assert executable.exists(), "Run uv sync --locked before the integration suite."
+    executable = Path(sys.executable).with_name("radicale-mcp")
+    assert executable.exists(), "Install radicale-mcp into the test interpreter's environment."
     env = {
         **os.environ,
         "CALDAV_URL": service.config.url,
